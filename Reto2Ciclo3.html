@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Reto2</title>
+</head>
+<body>
+    <center><h1>Bicicletas</h1></center>
+    <div>
+        <input type="number" id="idbici" placeholder="idBicicleta">
+        <input type="text" id="brand" placeholder="Marca" maxlength="20">
+        <input type="number" id="model" placeholder="Modelo">
+        <input type="number" id="idcategory" placeholder="Id categoria">
+        <input type="text" id="name" placeholder="Nombre" maxlength="400">
+    </div>
+    <button onclick="traerInformacionB()">Consultar</button>
+    <button onclick="guardarInformacionB()">Insertar</button>
+    <button onclick="editarInformacionB()">Actualizar</button>
+    <div id="resultadoB"></div>
+    <div>
+        <center><h2>Cliente</h2></center>
+        <div>
+            <input type="number" id="idcliente" placeholder="idcliente">
+            <input type="text" id="nameC" placeholder="Nombre" maxlength="400">
+            <input type="text" id="email" placeholder="Email" maxlength="20">
+            <input type="number" id="age" placeholder="Edad" maxlength="3">
+        </div>
+        </div>
+            <button onclick="traerInformacionC()">Consultar Clientes</button>
+            <button onclick="guardarInformacionC()">Insertar Cliente</button>
+            <button onclick="editarInformacionC()">Actualizar Cliente</button>
+            <div id="resultadoC"></div>
+        <div>
+    </div>
+    <div>
+        <center><h3>Mensaje</h3></center>
+        <div>
+            <input type="number" id="idmensage" placeholder="id mensaje">
+            <input type="text" id="message" placeholder="Mensaje ">
+        </div>
+        </div>
+            <button onclick="traerInformacionM()">Consultar Clientes</button>
+            <button onclick="guardarInformacionM()">Insertar Cliente</button>
+            <button onclick="editarInformacionM()">Actualizar Cliente</button>
+            <div id="resultadoM"></div>
+        <div>
+    </div>
+</body>
+<script type="text/javascript" src="functions.js"> </script>
+</html>
