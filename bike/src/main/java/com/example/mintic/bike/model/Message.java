@@ -24,7 +24,7 @@ public class Message {
     @JoinColumn(name="bikeId")
     @JsonIgnoreProperties({"messages","reservations"})
     //@JsonIgnoreProperties({"messages"})
-    private Bike bike;
+    private Bikes bikes;
 
 
     @ManyToOne
@@ -45,11 +45,11 @@ public class Message {
     public void setMessageText(String messageText) {
         this.messageText = messageText;
     }
-    public Bike getBike() {
-        return bike;
+    public Bikes getBikes() {
+        return bikes;
     }
-    public void setBike(Bike bike) {
-        this.bike = bike;
+    public void setBikes(Bikes bikes) {
+        this.bikes = bikes;
     }
     public Client getClient() {
         return client;

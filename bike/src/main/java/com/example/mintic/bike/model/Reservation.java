@@ -32,7 +32,7 @@ public class Reservation {
     @ManyToOne
     @JoinColumn(name = "bikeId")
     @JsonIgnoreProperties("reservations")
-    private Bike bike;
+    private Bikes bikes;
 
     @ManyToOne
     @JoinColumn(name = "clientId")
@@ -71,11 +71,11 @@ public class Reservation {
     public void setStatus(String status) {
         this.status = status;
     }
-    public Bike getBike() {
-        return bike;
+    public Bikes getBikes() {
+        return bikes;
     }
-    public void setBike(Bike bike) {
-        this.bike = bike;
+    public void setBikes(Bikes bikes) {
+        this.bikes = bikes;
     }
     public Client getClient() {
         return client;

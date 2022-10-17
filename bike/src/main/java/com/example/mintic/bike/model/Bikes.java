@@ -18,8 +18,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "bike")
-public class Bike  {
+@Table(name = "bikes")
+public class Bikes  {
 
     @SequenceGenerator(name = "fixidB",initialValue = 1)
 
@@ -39,18 +39,18 @@ public class Bike  {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("bike")
+    @JsonIgnoreProperties("bikes")
     private Category category;
 
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")
-    @JsonIgnoreProperties({"bike","client"})
-    //@JsonIgnoreProperties({"bike"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bikes")
+    @JsonIgnoreProperties({"bikes","client"})
+    //@JsonIgnoreProperties({"bikes"})
     private List<Message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")
-    @JsonIgnoreProperties({"bike","messages"})
-    //@JsonIgnoreProperties({"bike"})
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bikes")
+    @JsonIgnoreProperties({"bikes","messages"})
+    //@JsonIgnoreProperties({"bikes"})
     public List<Reservation> reservations;
 
     public Integer getId() {

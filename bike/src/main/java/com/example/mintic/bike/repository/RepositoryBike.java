@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.mintic.bike.model.Bike;
+import com.example.mintic.bike.model.Bikes;
 import com.example.mintic.bike.repository.crud.CrudRepositoryBike;
 
 @Repository
@@ -16,15 +16,19 @@ public class RepositoryBike {
     private CrudRepositoryBike crudRepositoryBike;
 
 
-    public List<Bike> getAll(){
-        return (List<Bike>) crudRepositoryBike.findAll();
+    public List<Bikes> getAll(){
+        return (List<Bikes>) crudRepositoryBike.findAll();
     }
-    public Optional<Bike> getBike(int id){
+    public Optional<Bikes> getBikes(int id){
         return crudRepositoryBike.findById(id);
     }
     
-    public Bike save(Bike bike){
-        return crudRepositoryBike.save(bike);
+    public Bikes save(Bikes bikes){
+        return crudRepositoryBike.save(bikes);
+    }
+
+    public void delete(Bikes bikes){
+        crudRepositoryBike.delete(bikes);
     }
 
 }

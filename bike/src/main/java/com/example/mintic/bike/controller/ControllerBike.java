@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.http.HttpStatus;
 
-import com.example.mintic.bike.model.Bike;
+import com.example.mintic.bike.model.Bikes;
 import com.example.mintic.bike.service.ServiceBike;
 
 @RestController
@@ -28,20 +29,25 @@ public class ControllerBike {
     
 
     @GetMapping("/all")
-    public List<Bike> getAll(){
+    public List<Bikes> getAll(){
         return serviceBike.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Bike> getBike(@PathVariable("id") int id) {
-        return serviceBike.getBike(id);
+    public Optional<Bikes> getBikes(@PathVariable("id") int id) {
+        return serviceBike.getBikes(id);
     }
 
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Bike save(@RequestBody Bike bike) {
-        return serviceBike.save(bike);
+    public Bikes save(@RequestBody Bikes bikes) {
+        return serviceBike.save(bikes);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean delete(@PathVariable("id") int id){
+        return serviceBike.delete(id);
     }
 
 

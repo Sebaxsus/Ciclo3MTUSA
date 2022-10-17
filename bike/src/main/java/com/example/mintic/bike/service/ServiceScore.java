@@ -10,4 +10,6 @@ public class ServiceScore {
     
     @Autowired
     private RepositoryScore repositoryScore;
+
+    
 }
